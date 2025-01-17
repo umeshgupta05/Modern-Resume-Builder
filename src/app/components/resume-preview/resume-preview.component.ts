@@ -332,7 +332,7 @@ import { Resume } from '../../models/resume.model';
           display: flex;
           gap: 2rem;
           color: #4a5568;
-          font-size: 0.9rem;
+          font-size: 0.7rem;
 
           .contact-item {
             display: flex;
@@ -357,7 +357,7 @@ import { Resume } from '../../models/resume.model';
           }
 
           h2 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: #2d3748;
             border-bottom: 1px solid #e2e8f0;
             padding-bottom: 0.5rem;
@@ -370,7 +370,7 @@ import { Resume } from '../../models/resume.model';
             margin-bottom: 1.5rem;
 
             h3 {
-              font-size: 1.2rem;
+              font-size: 1.0rem;
               color: #2d3748;
               margin: 0;
               font-weight: normal;
@@ -383,7 +383,7 @@ import { Resume } from '../../models/resume.model';
 
             .date {
               color: #718096;
-              font-size: 0.875rem;
+              font-size: 0.675rem;
             }
 
             p {
@@ -399,7 +399,7 @@ import { Resume } from '../../models/resume.model';
           }
 
           h2 {
-            font-size: 1.25rem;
+            font-size: 1.10rem;
             color: #2d3748;
             border-bottom: 1px solid #e2e8f0;
             padding-bottom: 0.5rem;
@@ -469,7 +469,7 @@ import { Resume } from '../../models/resume.model';
               gap: 0.5rem;
               margin-bottom: 0.5rem;
               color: #4a5568;
-              font-size: 0.9rem;
+              font-size: 0.7rem;
 
               i {
                 color: var(--primary-color);
@@ -513,7 +513,7 @@ import { Resume } from '../../models/resume.model';
           margin-bottom: 2.5rem;
 
           h2 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: #2d3748;
             margin-bottom: 1.5rem;
             font-weight: normal;
@@ -563,7 +563,7 @@ import { Resume } from '../../models/resume.model';
 
             .timeline-content {
               h3 {
-                font-size: 1.2rem;
+                font-size: 1.0rem;
                 color: #2d3748;
                 margin: 0;
                 font-weight: normal;
@@ -571,7 +571,7 @@ import { Resume } from '../../models/resume.model';
 
               .timeline-header {
                 color: #4a5568;
-                font-size: 0.9rem;
+                font-size: 0.7rem;
                 margin: 0.25rem 0 0.5rem;
 
                 .company, .institution {
@@ -600,27 +600,27 @@ import { Resume } from '../../models/resume.model';
             border-radius: 0.5rem;
 
             .achievement-icon {
-              font-size: 1.5rem;
+              font-size: 1.3rem;
               color: var(--primary-color);
             }
 
             .achievement-content {
               h3 {
-                font-size: 1.1rem;
+                font-size: 1.0rem;
                 color: #2d3748;
                 margin: 0;
                 font-weight: normal;
               }
 
               .date {
-                font-size: 0.875rem;
+                font-size: 0.675rem;
                 color: #718096;
               }
 
               p {
                 margin: 0.5rem 0 0;
                 color: #4a5568;
-                font-size: 0.9rem;
+                font-size: 0.7rem;
               }
             }
           }
