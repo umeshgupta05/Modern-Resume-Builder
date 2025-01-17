@@ -64,29 +64,45 @@ export class ResumeService {
   }
 
   async exportAsPDF(): Promise<void> {
-    const element = document.querySelector('.resume-preview') as HTMLElement;
-    if (!element) return;
+  const element = document.querySelector('.resume-preview') as HTMLElement;
+  if (!element) return;
 
-    const canvas = await html2canvas(element, {
-      scale: 2,
-      useCORS: true,
-      logging: false
-    });
+  // Adjust scale for higher quality and better fit
+  const canvas = await html2canvas(element, {
+    scale: 3, // Higher scale for better resolution
+    useCORS: true,
+    logging: false
+  });
 
-    const imgData = canvas.toDataURL('image/png');
-    const pdf = new jsPDF({
-      orientation: 'portrait',
-      unit: 'px',
-      format: 'a4'
-    });
+  const imgData = canvas.toDataURL('image/png');
+  const pdf = new jsPDF({
+    orientation: 'portrait',
+    unit: 'px',
+    format: 'a4'
+  });
 
-    const imgProps = pdf.getImageProperties(imgData);
-    const pdfWidth = pdf.internal.pageSize.getWidth();
-    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+  const pdfWidth = pdf.internal.pageSize.getWidth();
+  const pdfHeight = pdf.internal.pageSize.getHeight();
 
-    pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-    pdf.save('resume.pdf');
+  const imgProps = pdf.getImageProperties(imgData);
+  const imgWidth = imgProps.width;
+  const imgHeight = imgProps.height;
+
+  // Scale the image to fit the PDF dimensions, preserving aspect ratio
+  const aspectRatio = imgWidth / imgHeight;
+  let width, height;
+
+  if (aspectRatio > pdfWidth / pdfHeight) {
+    width = pdfWidth;
+    height = width / aspectRatio;
+  } else {
+    height = pdfHeight;
+    width = height * aspectRatio;
   }
+
+  pdf.addImage(imgData, 'PNG', 0, 0, width, height);
+  pdf.save('resume.pdf');
+}
 
   async exportAsDocx(): Promise<void> {
     // For DOCX export, we'll need to implement a more complex conversion
